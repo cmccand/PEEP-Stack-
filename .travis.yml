@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: igtVVbQQIgnYrAdBv43a0Q01pZmA2piGrIItyF2b+ODjjxddbw5nuMpgjkyYel0sdKDqj2oJ3s2orzNEGUz5ExdfcKs5n3Rg0/kG5NaZvzcHX5wKwhbRitXELZlEk1JTFZFDs0vGYByLsL+jJTEeHyPt+evuiYhzy9o8swWTbNPUS1bAkxYBigw63UrvS3iuSKWJUuSwWNesI/BJFcC75gjsvQ5TtFaEi2qVAyoKUV4qpirMT2E1dQIGZF7XdoM5uIpIO7h03c8EEdLJGFrfZL0Vr2tL5VK1QJvhfDu9InoCzJsvn4danhpBRtHGIYaOVsPM6arD6wGr8wwIyPbULaKX5SG60GxcC42tFSaSscVy8F00XBTTsqnmkSwajQeAK0Vu0uhvIpxW8NSFW7uJxIWPDcQpEDD6o+JBs/IwFyjNd+J36ZzXI7nIwfmEJOE7rZMfaBapYyXpgCU4K889mLVm8CwtfvHSMCaXutWUBLirZPKX3J6z9f5eZ8Y15PyskjwSMvYfxNM4dbZ6RH1mHkXIs1E5R15axTZg6pjztd3DUDsxaEPEnXTs+tAYJyAL63RqOM0TabbdqYE+2eRTethtP7cNOIHw6M737vacNDhoyjdsj3Z1QjFKiksFrN/QHlCw57ovvcvSTckxcdr0MoQ5BN7Hhwi3sLO5sUggqjw=
+  app: gentle-oasis-10299
+  on:
+    repo: cmccand/PEEP-Stack-
